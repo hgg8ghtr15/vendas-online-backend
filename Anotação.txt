@@ -1,0 +1,7 @@
+######NPM update
+    npm update -g
+###### Instalação do nestjs.js
+    npm i -g @nestjs/cli
+
+--Execução
+    npm run start
