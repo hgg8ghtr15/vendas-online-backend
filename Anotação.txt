@@ -1,7 +1,37 @@
 ######NPM update
-    npm update -g
+npm update -g
+
 ###### Instalação do nestjs.js
-    npm i -g @nestjs/cli
+ npm i -g @nestjs/cli
 
 --Execução
-    npm run start
+npm run start
+npm run start:dev
+
+-- corrgige erro slint
+npm run lint
+
+ctrl + p 
+settings.json
+    "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit"
+        },
+        "[javascript]": {
+        "editor.codeActionsOnSave": {
+                "source.fixAll.eslint": "explicit"
+            }   
+        },
+        "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.codeActionsOnSave": {
+                "source.fixAll.eslint": "explicit"
+            }
+        },
+
+
+-- Cria o modelo
+nest g module user
+nest g controller user
+
+
+
