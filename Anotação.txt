@@ -4,6 +4,15 @@ npm update -g
 ###### Instalação do nestjs.js
  npm i -g @nestjs/cli
 
+Configurações banco de dados https://docs.nestjs.com/techniques/configuration
+npm i --save @nestjs/config 
+
+instalações   https://docs.nestjs.com/recipes/sql-typeorm
+npm install --save typeorm pg @nestjs/typeorm
+
+criação da conexão com banco
+https://docs.nestjs.com/techniques/database
+
 --Execução
 npm run start
 npm run start:dev
@@ -32,6 +41,17 @@ settings.json
 -- Cria o modelo
 nest g module user
 nest g controller user
+nest g service user
+
+
+###########  Doker
+Criar uma imagem do postgree
+    docker pull postgres
+
+start
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+
+
 
 
 
