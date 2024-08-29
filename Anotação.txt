@@ -20,6 +20,11 @@ npm run start:dev
 -- corrgige erro slint
 npm run lint
 
+####### Criação das migration
+--cria o arquivo da migration
+npx typeorm migration:create ./src/migration/create_table_user
+
+
 ctrl + p 
 settings.json
     "editor.codeActionsOnSave": {
@@ -50,7 +55,6 @@ Criar uma imagem do postgree
 
 start
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
-
 
 
 
