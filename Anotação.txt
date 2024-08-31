@@ -24,6 +24,9 @@ npm run lint
 --cria o arquivo da migration
 npx typeorm migration:create ./src/migration/create_table_user
 
+####### Criação de cash  https://docs.nestjs.com/techniques/caching
+npm install @nestjs/cache-manager cache-manager
+
 
 ctrl + p 
 settings.json

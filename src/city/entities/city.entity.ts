@@ -16,9 +16,9 @@ export class CityEntity {
   @Column({ name: 'name', nullable: false })
   name: string;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @CreateDateColumn({ name: 'updatedAt' })
+  @CreateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 }
