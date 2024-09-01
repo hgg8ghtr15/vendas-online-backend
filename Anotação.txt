@@ -28,6 +28,12 @@ npx typeorm migration:create ./src/migration/create_table_user
 npm install @nestjs/cache-manager cache-manager
 
 
+####### Validando os formulários  https://docs.nestjs.com/pipes
+
+npm i --save class-validator class-transformer
+
+
+####### configurações para erros no projeto
 ctrl + p 
 settings.json
     "editor.codeActionsOnSave": {
