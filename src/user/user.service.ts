@@ -25,19 +25,26 @@ export class UserService {
     });
   }
 
+  async getUserByIdUsingRelations(userId: number): Promise<UserEntity> {
+    return await this.userRepository.findOne({
+      where: { id: userId },
+      relations: ['addresses'],
+    });
+  }
+
   async getAllUser(): Promise<UserEntity[]> {
     return await this.userRepository.find();
   }
 
-  async findUserByid(user_id: number): Promise<UserEntity> {
+  async findUserByid(useId: number): Promise<UserEntity> {
     const user = await this.userRepository.findOne({
       where: {
-        id: user_id,
+        id: useId,
       },
     });
 
     if (!user) {
-      throw new NotFoundException(`Usuário id ${user_id} não encontrado!`);
+      throw new NotFoundException(`Usuário id ${useId} não encontrado!`);
     }
 
     return user;
