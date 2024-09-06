@@ -63,6 +63,8 @@ npm install --save @nestjs/jwt
 
 autorization https://docs.nestjs.com/security/authorization
 
+Criar custon-decoratons https://docs.nestjs.com/graphql/other-features#custom-decorators
+
 
 ###########  Doker   https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/
 Criar uma imagem do postgree
