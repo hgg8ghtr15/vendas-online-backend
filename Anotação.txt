@@ -58,6 +58,12 @@ nest g controller user
 nest g service user
 
 
+########### Authentication https://docs.nestjs.com/security/authentication#creating-an-authentication-module
+npm install --save @nestjs/jwt
+
+autorization https://docs.nestjs.com/security/authorization
+
+
 ###########  Doker   https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/
 Criar uma imagem do postgree
     docker pull postgres
