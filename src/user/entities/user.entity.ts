@@ -27,13 +27,13 @@ export class UserEntity {
   @Column({ name: 'password', nullable: true })
   password: string;
 
-  @Column({ name: 'typeUser', nullable: true })
+  @Column({ name: 'type_user', nullable: true })
   typeUser: number;
 
-  @CreateDateColumn({ name: 'createdAt' })
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @CreateDateColumn({ name: 'updatedAt' })
+  @CreateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
   @OneToMany(() => AddressEntity, (address) => address.user)
