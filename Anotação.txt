@@ -74,5 +74,11 @@ start
 docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 
 
+######### Teste
+executar teste especifico
+npm run test src/user/__tests__/user.service.spec.ts
+
+Executa teste 
+npm run test
 
 
