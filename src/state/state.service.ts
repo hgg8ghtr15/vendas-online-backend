@@ -16,6 +16,7 @@ export class StateService {
   }
 
   async getAllState(): Promise<StateEntity[]> {
-    return await this.stateRepository.find();
+    const state = await this.stateRepository.find();
+    return state;
   }
 }
