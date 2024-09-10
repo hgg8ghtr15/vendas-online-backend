@@ -3,8 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { AddressEntity } from './entities/address.entity';
 import { Repository } from 'typeorm';
 import { CreateAddressDto } from './dtos/createAddress.dto';
-import { UserService } from 'src/user/user.service';
-import { CityService } from 'src/city/city.service';
+import { UserService } from '../user/user.service';
+import { CityService } from '../city/city.service';
 
 @Injectable()
 export class AddressService {
@@ -19,9 +19,13 @@ export class AddressService {
     createAddressDto: CreateAddressDto,
     userId: number,
   ): Promise<AddressEntity> {
-    await this.userService.findUserByid(userId);
-    await this.cityService.findById(createAddressDto.cityId);
-    return this.addressRepository.save({
+    const user = await this.userService.findUserByid(userId);
+    const city = await this.cityService.findById(createAddressDto.cityId);
+
+    if (!user || !city) {
+      throw new Error(`Erro ao tentar executar`);
+    }
+    return await this.addressRepository.save({
       ...createAddressDto,
       userId,
     });
