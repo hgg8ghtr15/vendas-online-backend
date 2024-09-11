@@ -67,19 +67,17 @@ describe('AddressService', () => {
     expect(address).toEqual(addressMock);
   });
 
-  // it('Retorno de address error user Service!', async () => {
-  //   jest.spyOn(userService, 'findUserByid').mockRejectedValueOnce(undefined);
+  it('Retorno de address error user Service!', async () => {
+    const findUserSpy = jest
+      .spyOn(userService, 'findUserByid')
+      .mockRejectedValueOnce(new Error('Erro ao tentar executar'));
 
-  //   await expect(
-  //     service.createAddress(createAddressMock, undefined),
-  //   ).rejects.toThrow();
-  // });
-
-  // it('should return error if exception in userService', async () => {
-  //   jest.spyOn(userService, 'findUserByid').mockRejectedValueOnce(new Error());
-
-  //   expect(
-  //     service.createAddress(createAddressMock, userEntityMock.id),
-  //   ).rejects.toThrowError();
-  // });
+    try {
+      await service.createAddress(createAddressMock, userEntityMock.id);
+    } catch (error) {
+      expect(findUserSpy).toHaveBeenCalled(); // Verifique se o método findUserByid foi chamado
+      expect(error).toBeInstanceOf(Error); // Verifique se o erro foi lançado
+      expect(error.message).toBe('Erro ao tentar executar'); // Verifique a mensagem do erro
+    }
+  });
 });

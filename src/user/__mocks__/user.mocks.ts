@@ -3,10 +3,10 @@ import { UserType } from '../enum/user-type.enum';
 
 export const userEntityMock: UserEntity = {
   id: 123456,
-  email: 'testeemail@gmail.com',
+  email: 'fabiolukascj@gmail.com',
   name: 'testenome',
   cpf: '123456789',
-  password: 'testedesenha',
+  password: '12345692',
   phone: '123445695',
   typeUser: UserType.User,
   createdAt: new Date(),
